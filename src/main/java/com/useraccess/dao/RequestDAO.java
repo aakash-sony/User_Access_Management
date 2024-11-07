@@ -4,11 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import com.useraccess.model.Request;
+import com.useraccess.model.UserRequest;
 
 public class RequestDAO {
 	// Method to submit a new access request
-	public boolean submitRequest(Request request) {
+	public boolean submitRequest(UserRequest request) {
 		String sql = "INSERT INTO requests (user_id, software_id, access_type, reason, status) VALUES (?, ?, ?, ?, ?)";
 
 		try (Connection conn = DBConnection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {

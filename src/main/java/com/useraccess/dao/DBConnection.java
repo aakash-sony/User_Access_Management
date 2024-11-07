@@ -15,7 +15,7 @@ public class DBConnection {
         Connection connection = null;
         try {
             // Register the PostgreSQL JDBC driver
-        	System.out.println("Loading PostgreSQL driver...");
+        	
             Class.forName("org.postgresql.Driver");
             
             // Create a connection to the database

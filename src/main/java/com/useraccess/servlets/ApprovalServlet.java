@@ -40,7 +40,7 @@ public class ApprovalServlet extends HttpServlet {
 			}
 
 			if (success) {
-				request.setAttribute("success", "Request " + action.toLowerCase() + "d successfully.");
+				request.setAttribute("success", "Request " + action.toLowerCase() + " successfully.");
 				request.getRequestDispatcher("approval.jsp").forward(request, response);
 			} 
 		} catch (Exception e) {

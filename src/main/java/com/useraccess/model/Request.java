@@ -2,20 +2,18 @@ package com.useraccess.model;
 
 public class Request {
 	private int id;
-	private int userId;
-	private int softwareId;
+	private String userName;
 	private String accessType;
 	private String reason;
-	private String status;
+	private String softwareName;
 
 	// Constructor
-	public Request(int id, int userId, int softwareId, String accessType, String reason, String status) {
+	public Request(int id, String userName, String accessType, String reason, String softwareName) {
 		this.id = id;
-		this.userId = userId;
-		this.softwareId = softwareId;
+		this.userName = userName;
 		this.accessType = accessType;
 		this.reason = reason;
-		this.status = status;
+		this.softwareName = softwareName;
 	}
 
 	// Default constructor
@@ -31,20 +29,12 @@ public class Request {
 		this.id = id;
 	}
 
-	public int getUserId() {
-		return userId;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-
-	public int getSoftwareId() {
-		return softwareId;
-	}
-
-	public void setSoftwareId(int softwareId) {
-		this.softwareId = softwareId;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getAccessType() {
@@ -63,17 +53,12 @@ public class Request {
 		this.reason = reason;
 	}
 
-	public String getStatus() {
-		return status;
+	public String getSoftwareName() {
+		return softwareName;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setSoftwareName(String softwareName) {
+		this.softwareName = softwareName;
 	}
 
-	@Override
-	public String toString() {
-		return "Request{id=" + id + ", userId=" + userId + ", softwareId=" + softwareId + ", accessType='" + accessType
-				+ "', reason='" + reason + "', status='" + status + "'}";
-	}
 }

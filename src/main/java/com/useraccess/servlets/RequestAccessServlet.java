@@ -1,13 +1,10 @@
 package com.useraccess.servlets;
 
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.List;
 
 import com.useraccess.dao.RequestDAO;
-import com.useraccess.dao.SoftwareDAO;
 import com.useraccess.model.Request;
-import com.useraccess.model.Software;
+import com.useraccess.model.UserRequest;
 import com.useraccess.model.Users;
 
 import jakarta.servlet.ServletException;
@@ -42,7 +39,7 @@ public class RequestAccessServlet extends HttpServlet {
 
 		// Create a Request object with the status defaulted to "Pending"
 
-		Request accessRequest = new Request();
+		UserRequest accessRequest = new UserRequest();
 		accessRequest.setUserId(users.getId());
 		accessRequest.setSoftwareId(softwareId);
 		accessRequest.setAccessType(accessType);

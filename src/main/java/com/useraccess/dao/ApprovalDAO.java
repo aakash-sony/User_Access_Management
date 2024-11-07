@@ -12,7 +12,8 @@ import com.useraccess.model.Request;
 public class ApprovalDAO {
 
 	  public List<Request> getPendingRequests() throws SQLException {
-	        String sql = "SELECT * FROM requests WHERE status = 'Pending'";
+	        String sql = "select u.username, s.name, r.id, r.reason, r.access_type from requests r join software s on \r\n"
+	        		+ "r.software_id = s.id join users u on u.id = r.user_id WHERE r.status = 'Pending'";
 	        List<Request> requestList = new ArrayList<>();
 	        try (Connection connection = DBConnection.getConnection();
 	             PreparedStatement statement = connection.prepareStatement(sql);
@@ -20,12 +21,11 @@ public class ApprovalDAO {
 	        	System.out.println(sql);
 	            while (resultSet.next()) {
 	                requestList.add(new Request(
-	                        resultSet.getInt(1),
-	                        resultSet.getInt(2),
 	                        resultSet.getInt(3),
-	                        resultSet.getString(4),
+	                        resultSet.getString(1),
 	                        resultSet.getString(5),
-	                        resultSet.getString(6)
+	                        resultSet.getString(4),
+	                        resultSet.getString(2)
 	                ));
 	            }
 	        }

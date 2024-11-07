@@ -29,7 +29,7 @@ public class SignUpServlet extends HttpServlet {
 			request.setAttribute("message", "Registration successful! Please log in.");
 			request.getRequestDispatcher("RegSuccess.jsp").forward(request, response);
 		} else {
-			request.setAttribute("message", "Registration failed! Please try again!!");
+			request.setAttribute("message", "Already Registered! Please login!");
 			request.getRequestDispatcher("Message.jsp").forward(request, response);
 		}
 
