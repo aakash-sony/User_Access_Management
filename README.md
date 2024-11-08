@@ -1,3 +1,8 @@
+![request page](https://github.com/user-attachments/assets/d8baa54c-9a08-4966-941c-ab13f4ac6ce7)
+![signup page](https://github.com/user-attachments/assets/f6d5794e-25c5-4f73-ace8-a2b755ae62dc)
+![pendingRequest page](https://github.com/user-attachments/assets/8aa4f355-7ffb-42d8-8a22-80ad7f0ec74a)
+![login page](https://github.com/user-attachments/assets/5a91b032-45c8-4705-8c92-d9c1bec7389e)
+![admin page](https://github.com/user-attachments/assets/f0754d34-523f-443b-9f43-1f917bd8162e)
 ## User Access Management System
 
 ### Overview
