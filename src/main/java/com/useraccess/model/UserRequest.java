@@ -6,9 +6,9 @@ public class UserRequest {
 	private String accessType;
 	private String reason;
 	private String status;
-	
+
 	public UserRequest() {}
-	
+
 	public UserRequest(int userId, int softwareId, String accessType, String reason, String status) {
 		super();
 		this.userId = userId;

@@ -62,7 +62,7 @@ public class SoftwareServlet extends HttpServlet{
 	        	System.out.println("software Added..");
 	            // Software added successfully, redirect to the same page with a success message
 	        	request.setAttribute("success", "Software added successfully!");
-				
+
 	        	request.getRequestDispatcher("status.jsp").forward(request, response);
 	        	} else {
 	            // Failed to add software, redirect with an error message

@@ -16,6 +16,7 @@ import jakarta.servlet.http.HttpSession;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String username = request.getParameter("uName");
@@ -34,7 +35,7 @@ public class LoginServlet extends HttpServlet {
 					response.sendRedirect("pendingRequest.jsp");
 					break;
 				case "Admin":
-					response.sendRedirect("createSoftware.jsp");
+					response.sendRedirect("adminDashboard.jsp");
 					break;
 				}
 			} else {

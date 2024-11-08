@@ -3,7 +3,6 @@ package com.useraccess.servlets;
 import java.io.IOException;
 
 import com.useraccess.dao.RequestDAO;
-import com.useraccess.model.Request;
 import com.useraccess.model.UserRequest;
 import com.useraccess.model.Users;
 
@@ -25,14 +24,14 @@ public class RequestAccessServlet extends HttpServlet {
 		Users users = (Users) session.getAttribute("users");
 
 		// Check if the user is logged in and is an Employee
-		if (users == null || !"Employee".equals(users.getRole())) {
+		if (users == null || !(users.getRole().equalsIgnoreCase("manager"))) {
 			request.setAttribute("message", "Unauthorized access.");
 			request.getRequestDispatcher("Message.jsp").forward(request, response);
 			return;
 		}
 
 		// Get parameters from the form
-		
+
 		int softwareId = Integer.parseInt(request.getParameter("softwareId"));
 		String accessType = request.getParameter("accessType");
 		String reason = request.getParameter("reason");

@@ -1,6 +1,7 @@
 package com.useraccess.servlets;
 
 import java.io.IOException;
+
 import com.useraccess.dao.ApprovalDAO;
 import com.useraccess.model.Users;
 
@@ -42,7 +43,7 @@ public class ApprovalServlet extends HttpServlet {
 			if (success) {
 				request.setAttribute("success", "Request " + action.toLowerCase() + " successfully.");
 				request.getRequestDispatcher("approval.jsp").forward(request, response);
-			} 
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			response.getWriter().println("Error processing request: " + e.getMessage());

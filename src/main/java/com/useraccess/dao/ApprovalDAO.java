@@ -31,7 +31,7 @@ public class ApprovalDAO {
 	        }
 	        return requestList;
 	    }
-	  
+
 	  public boolean updateRequestStatus(int requestId, String status) throws SQLException {
 	        String sql = "UPDATE requests SET status = ? WHERE id = ?";
 	        try (Connection connection = DBConnection.getConnection();
