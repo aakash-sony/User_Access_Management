@@ -23,7 +23,7 @@ public class RequestAccessServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		Users users = (Users) session.getAttribute("users");
 
-		if (users == null || !(users.getRole().equalsIgnoreCase("manager"))) {
+		if (users == null || users.getRole().equalsIgnoreCase("manager")) {
 			request.setAttribute("message", "Unauthorized access.");
 			request.getRequestDispatcher("Message.jsp").forward(request, response);
 			return;

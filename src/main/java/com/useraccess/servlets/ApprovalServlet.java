@@ -22,8 +22,8 @@ public class ApprovalServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		Users users = (Users) session.getAttribute("users");
 
-		if (users == null || !"Manager".equals(users.getRole())) {
-			request.setAttribute("message", "Unauthorized access. Only Managers can update requests.");
+		if (users == null || (users.getRole().equalsIgnoreCase("employee"))) {
+			request.setAttribute("message", "Unauthorized access... ");
 			request.getRequestDispatcher("Message.jsp").forward(request, response);
 			return;
 		}

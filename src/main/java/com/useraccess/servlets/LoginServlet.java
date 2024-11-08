@@ -27,6 +27,8 @@ public class LoginServlet extends HttpServlet {
 			if (users != null) {
 				HttpSession session = request.getSession();
 				session.setAttribute("users", users);
+				session.setAttribute("role", users.getRole());
+				System.out.println("role"+users.getRole());
 				switch (users.getRole()) {
 				case "Employee":
 					response.sendRedirect("requestAccess.jsp");

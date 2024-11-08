@@ -1,8 +1,5 @@
-<%@ page
-	language="java"
-	contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page import="java.util.List"%>
 <%@ page import="com.useraccess.model.Request"%>
 <%@ page import="com.useraccess.dao.ApprovalDAO"%>
@@ -10,10 +7,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta
-	name="viewport"
-	content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pending Access Requests</title>
 </head>
 <style>
@@ -110,6 +104,16 @@ input[name="action"][value="Reject"]:hover {
 }
 </style>
 <body>
+	<%
+	String role = (String) session.getAttribute("role");
+	String buttonText = "Login as " + role;
+	%>
+	<div style="text-align: right; margin: 20px;">
+		<button
+			style="padding: 8px 16px; font-size: 14px; cursor: pointer; border: none; background-color: #4CAF50; color: white; border-radius: 4px;">
+			<%=buttonText%>
+		</button>
+	</div>
 	<div class="container">
 		<h2>Pending Access Requests</h2>
 		<table>
@@ -143,23 +147,10 @@ input[name="action"][value="Reject"]:hover {
 				<td><%=req.getAccessType()%></td>
 				<td><%=req.getReason()%></td>
 				<td>
-					<form
-						action="pendingRequests"
-						method="post"
-					>
-						<input
-							type="hidden"
-							name="requestId"
-							value="<%=req.getId()%>"
-						> <input
-							type="submit"
-							name="action"
-							value="Approve"
-						> <input
-							type="submit"
-							name="action"
-							value="Reject"
-						>
+					<form action="pendingRequests" method="post">
+						<input type="hidden" name="requestId" value="<%=req.getId()%>">
+						<input type="submit" name="action" value="Approve">
+						<input type="submit" name="action" value="Reject">
 					</form>
 				</td>
 			</tr>
@@ -168,10 +159,7 @@ input[name="action"][value="Reject"]:hover {
 			} else {
 			%>
 			<tr>
-				<td
-					colspan="6"
-					class="no-requests"
-				>No pending requests.</td>
+				<td colspan="6" class="no-requests">No pending requests.</td>
 			</tr>
 			<%
 			}
