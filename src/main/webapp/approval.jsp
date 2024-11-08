@@ -7,12 +7,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-	String success = (String) request.getAttribute("success");
-	if (success != null) {
-		out.println(success);
-	}
-	%>
+<%
+String msg = (String) request.getAttribute("success");
+if (msg != null && !msg.isEmpty()) {
+%>
+<script type="text/javascript">
+  alert('<%= msg %>');
+</script>
+<%
+}
+%>
 	<%@include file="pendingRequest.jsp"%>
 </body>
 </html>

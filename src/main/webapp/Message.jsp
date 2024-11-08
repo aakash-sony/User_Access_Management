@@ -4,19 +4,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Auth database</title>
 </head>
 <body>
-<div>
-<h3 style="text-align: center; color: green">
 <%
-String msg = (String)request.getAttribute("message");
-out.println(msg);
+String msg = (String) request.getAttribute("message");
+if (msg != null && !msg.isEmpty()) {
 %>
-</h3>
-</div>
-<div>
+<script type="text/javascript">
+  alert('<%= msg %>');
+</script>
+<%
+}
+%>
 <%@include file = "login.jsp" %>
-</div>
+
 </body>
 </html>

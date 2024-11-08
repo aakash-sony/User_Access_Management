@@ -70,8 +70,8 @@
         cursor: pointer;
         border-radius: 4px;
         transition: background-color 0.3s;
-        width: 100%;/* Make both buttons the same width */
-        margin-bottom: 10px; /* Add some spacing between buttons */
+        width: 100%;
+        margin-bottom: 10px; 
     }
     
     .back-button {
@@ -83,8 +83,8 @@
         cursor: pointer;
         border-radius: 4px;
         transition: background-color 0.3s;
-        width: 140px;/* Make both buttons the same width */
-        margin-bottom: 10px; /* Add some spacing between buttons */
+        width: 140px;
+        margin-bottom: 10px; 
     }
 
     input[type="submit"]:hover,
@@ -93,11 +93,11 @@
     }
 
     .back-button {
-        background-color: #007bff; /* Blue color for back button */
+        background-color: #007bff; 
     }
 
     .back-button:hover {
-        background-color: #0056b3; /* Darker blue on hover */
+        background-color: #0056b3; 
     }
 
     .form-footer {

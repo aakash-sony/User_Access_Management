@@ -23,14 +23,11 @@ public class RequestAccessServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		Users users = (Users) session.getAttribute("users");
 
-		// Check if the user is logged in and is an Employee
 		if (users == null || !(users.getRole().equalsIgnoreCase("manager"))) {
 			request.setAttribute("message", "Unauthorized access.");
 			request.getRequestDispatcher("Message.jsp").forward(request, response);
 			return;
 		}
-
-		// Get parameters from the form
 
 		int softwareId = Integer.parseInt(request.getParameter("softwareId"));
 		String accessType = request.getParameter("accessType");
@@ -44,16 +41,14 @@ public class RequestAccessServlet extends HttpServlet {
 		accessRequest.setAccessType(accessType);
 		accessRequest.setReason(reason);
 
-		// Submit the request using RequestDAO
 		boolean isSubmitted = new RequestDAO().submitRequest(accessRequest);
 
 		if (isSubmitted) {
-			// Redirect to a confirmation page or back to the request form with a success
-			// message
+
 			request.setAttribute("success", "Request submitted successfully!");
 			request.getRequestDispatcher("access.jsp").forward(request, response);
 		} else {
-			// Redirect back to the request form with an error message
+
 			request.setAttribute("failed", "Failed to submit request. Please try again..");
 			request.getRequestDispatcher("access.jsp").forward(request, response);
 

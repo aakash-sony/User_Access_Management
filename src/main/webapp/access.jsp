@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,19 +7,27 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
+	<%
 	String success = (String) request.getAttribute("success");
 	String failed = (String) request.getAttribute("failed");
-	
-	if(success != null)
-	{
-		out.println(success);
+
+	if (success != null && !success.isEmpty()) {
+	%>
+	<script type="text/javascript">
+    alert('<%=success%>');
+</script>
+	<%
 	}
-	if(failed != null)
-	{
-		out.println(failed);
+
+	if (failed != null && !failed.isEmpty()) {
+	%>
+	<script type="text/javascript">
+    alert('<%=failed%>
+		');
+	</script>
+	<%
 	}
 	%>
-	<%@include file = "requestAccess.jsp" %>
+	<%@include file="requestAccess.jsp"%>
 </body>
 </html>

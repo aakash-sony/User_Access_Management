@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import com.useraccess.model.UserRequest;
 
 public class RequestDAO {
-	// Method to submit a new access request
 	public boolean submitRequest(UserRequest request) {
 		String sql = "INSERT INTO requests (user_id, software_id, access_type, reason, status) VALUES (?, ?, ?, ?, ?)";
 

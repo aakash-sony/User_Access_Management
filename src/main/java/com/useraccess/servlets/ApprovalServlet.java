@@ -22,7 +22,6 @@ public class ApprovalServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		Users users = (Users) session.getAttribute("users");
 
-		// Verify if the user is logged in and has the Manager role
 		if (users == null || !"Manager".equals(users.getRole())) {
 			request.setAttribute("message", "Unauthorized access. Only Managers can update requests.");
 			request.getRequestDispatcher("Message.jsp").forward(request, response);
